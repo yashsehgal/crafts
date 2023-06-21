@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "@radix-ui/react-tooltip": "^1.0.5",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.12",
     "react-icons": "^4.3.1",

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 export default function Pattern() {
   const blockPopulationCount = 600;
@@ -15,7 +14,7 @@ export default function Pattern() {
       <div className="flex">
         <div className="blocks-container grid grid-cols-10">
           {blocks?.map((block, blockIndex) => {
-            if (blockIndex % 3 == 0) {
+            if (blockIndex % 3 === 0) {
               return (
                 <div className="w-[6px] h-[6px] bg-indigo-500 border border-slate-800" />
               )
@@ -41,7 +40,7 @@ export default function Pattern() {
         </div>
         <div className="blocks-container grid grid-cols-10">
           {blocks?.map((block, blockIndex) => {
-            if (blockIndex % 4 == 0) {
+            if (blockIndex % 4 === 0) {
               return (
                 <div className="w-[6px] h-[6px] bg-indigo-500 border border-slate-800" />
               )
@@ -54,7 +53,7 @@ export default function Pattern() {
         </div>
         <div className="blocks-container grid grid-cols-10">
           {blocks?.map((block, blockIndex) => {
-            if (blockIndex % 6 == 1) {
+            if (blockIndex % 6 === 1) {
               return (
                 <div className="w-[6px] h-[6px] bg-indigo-500 border border-slate-800" />
               )
@@ -80,7 +79,7 @@ export default function Pattern() {
         </div>
         <div className="blocks-container grid grid-cols-10">
           {blocks?.map((block, blockIndex) => {
-            if (blockIndex % 3 == 0) {
+            if (blockIndex % 3 === 0) {
               return (
                 <div className="w-[6px] h-[6px] bg-indigo-500 border border-slate-800" />
               )
