@@ -1,39 +1,30 @@
-[
-  {
-    "data": {
-      "pullRequestInit": {
-        "description": [
-          { "type": "heading", "variant": "h2", "content": "Description" },
-          { "type": "text", "content": "Adding Nx setup for monorepos" },
-          { "type": "heading", "variant": "h3", "content": "Fixes issue" },
-          { "type": "text", "content": "#12455", "tag": "issue-tag" },
-          { "type": "text", "content": "#12456", "tag": "issue-tag" },
-          { "type": "text", "content": "#12554", "tag": "pr-tag" }
-        ],
-        "author": {
-          "username": "yashsehgal",
-          "timestamp": {
-            "date": 24,
-            "month": "Feb",
-            "year": "2023"
-          }
-        }
-      },
-      "timelineData": [
-        { "entityType": "entity-commit", "commitMessage": "chore: nx installation / code setup", "commitID": "4jh544", "author": "yashsehgal" },
-        { "entityType": "entity-commit", "commitMessage": "feat: added layouts for main screen", "commitID": "34ef56", "author": "yashsehgal" },
-        { "entityType": "entity-commit", "commitMessage": "style: added tailwind with responisve layout", "commit": "56f7hh", "author": "yashsehgal" },
-        { "entityType": "entity-reply", "description": [
-          { "type": "text", "content": "" }
-        ], "author": "yashsehgal" }
-      ]
-    },
-    "meta": {
-      "owner": {
+{
+  "data": {
+    "pullRequestInit": {
+      "description": [
+        { "type": "heading", "variant": "h2", "content": "Description" },
+        { "type": "text", "content": "Adding Nx setup for monorepos" },
+        { "type": "heading", "variant": "h2", "content": "Fixes issue" },
+        { "type": "text", "content": "#12455", "tag": "issue-tag" },
+        { "type": "text", "content": "#12456", "tag": "issue-tag" },
+        { "type": "text", "content": "#12554", "tag": "pr-tag" }
+      ],
+      "author": {
         "username": "yashsehgal",
-        "uniqueID": "yashsehgal",
-        "location": "Indore, Madhya Pradesh, India"
+        "timestamp": {
+          "date": 24,
+          "month": "Feb",
+          "year": "2023"
+        }
       }
-    }
+    },
+    "timelineData": [
+      { "entityType": "entity-commit", "commitMessage": "chore: nx installation / code setup", "commitID": "4jh544", "author": "yashsehgal" },
+      { "entityType": "entity-commit", "commitMessage": "feat: added layouts for main screen", "commitID": "34ef56", "author": "yashsehgal" },
+      { "entityType": "entity-commit", "commitMessage": "style: added tailwind with responisve layout", "commit": "56f7hh", "author": "yashsehgal" },
+      { "entityType": "entity-reply", "description": [
+        { "type": "text", "content": "" }
+      ], "author": "yashsehgal" }
+    ]
   }
-]
+}
