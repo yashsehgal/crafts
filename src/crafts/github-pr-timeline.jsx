@@ -16,6 +16,7 @@
 import { useState, useEffect } from 'react';
 import GitHubAPIResponse from '../lib/github-pr-timeline-data.json';
 import PullRequestDescription from './components/github-timeline/pr-description';
+import TimelineEntity from './components/timeline-entity';
 
 export default function GitHubPRTimeline() {
   // creating a state and manager for handle the data from GitHub API response
@@ -25,7 +26,7 @@ export default function GitHubPRTimeline() {
 
   return (
     <div className="github-pr-timeline-component-container">
-      <h1 className="leading-snug tracking-tighter text-3xl font-medium">{"GitHub like PR Timeline"}</h1>
+      {/* <h1 className="leading-snug tracking-tighter text-3xl font-medium">{"GitHub like PR Timeline"}</h1> */}
       {/* adding extra spacing */}
       <div className="my-12" />
       <div className="github-pr-timeline-component w-[720px]">
@@ -34,6 +35,8 @@ export default function GitHubPRTimeline() {
           description={pullRequestTimelineData?.data?.pullRequestInit?.description}
           author={pullRequestTimelineData?.data?.pullRequestInit?.author}
         />
+        {/* rendering the timeline component */}
+        <TimelineEntity data={pullRequestTimelineData?.data?.timelineData} />
       </div>
     </div>
   )

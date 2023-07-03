@@ -19,12 +19,76 @@
       }
     },
     "timelineData": [
-      { "entityType": "entity-commit", "commitMessage": "chore: nx installation / code setup", "commitID": "4jh544", "author": "yashsehgal" },
-      { "entityType": "entity-commit", "commitMessage": "feat: added layouts for main screen", "commitID": "34ef56", "author": "yashsehgal" },
-      { "entityType": "entity-commit", "commitMessage": "style: added tailwind with responisve layout", "commit": "56f7hh", "author": "yashsehgal" },
-      { "entityType": "entity-reply", "description": [
-        { "type": "text", "content": "" }
-      ], "author": "yashsehgal" }
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "chore: nx installation / code setup",
+        "commitID": "4jh544",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "feat: added layouts for main screen",
+        "commitID": "34ef56",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "style: added tailwind with responisve layout",
+        "commitID": "56f7hh",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-reply",
+        "description": [
+          { "type": "text", "content": "Please fix the font import structure, right now it's have a delay." }
+        ],
+        "author": {
+          "username": "yashsehgal",
+          "timestamp": {
+            "date": 24,
+            "month": "Feb",
+            "year": "2023"
+          }
+        }
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "style(fix): cdn font import added",
+        "commitID": "45fc66",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "chore: prettier config / prettier lint fix",
+        "commitID": "13fE65",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-reply",
+        "description": [
+          { "type": "text", "content": "Now @team-members can start adding their profiles, go ahead 🌱" }
+        ],
+        "author": {
+          "username": "yashsehgal",
+          "timestamp": {
+            "date": 24,
+            "month": "Feb",
+            "year": "2023"
+          }
+        }
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "feat: adding yashsehgal gh profile",
+        "commitID": "34456e",
+        "author": "yashsehgal"
+      },
+      {
+        "entityType": "entity-commit",
+        "commitMessage": "feat: adding mvkaran gh profile",
+        "commitID": "33567a",
+        "author": "mvkaran"
+      }
     ]
   }
 }
