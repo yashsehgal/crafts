@@ -42,3 +42,13 @@
   outline: none;
   box-shadow: 0 0 0 5px var(--black-a8);
 }
+
+/* removing scroll-bar visibility in spotify lyrics controller */
+#lyrics-container::-webkit-scrollbar {
+  display: none;
+}
+
+#lyrics-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
