@@ -52,3 +52,35 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.github-comment-content-body-wrapper > * {
+  @apply mb-3;
+}
+
+.github-comment-content-body-wrapper > ul {
+  @apply list-inside list-disc;
+}
+
+.github-comment-content-body-wrapper > ul > li {
+  @apply list-item;
+}
+
+.github-comment-content-body-wrapper > h1 {
+  @apply text-2xl font-semibold;
+}
+
+.github-comment-content-body-wrapper > h2 {
+  @apply text-xl font-semibold;
+}
+
+.github-comment-content-body-wrapper > h3 {
+  @apply text-lg font-medium;
+}
+
+.github-comment-content-body-wrapper > h4 {
+  @apply text-base font-medium;
+}
+
+.github-comment-content-body-wrapper a {
+  @apply text-blue-500 hover:underline;
+}
