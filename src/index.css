@@ -44,11 +44,11 @@
 }
 
 /* removing scroll-bar visibility in spotify lyrics controller */
-#lyrics-container::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 
-#lyrics-container {
+* {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
