@@ -16,7 +16,7 @@ export default function ShareFeature() {
   }, [window]);
 
   return (
-    <div className="share-feature-component-container">
+    <div className="share-feature-component-container absolute bottom-8">
       <div className={cn("share-feature-component relative w-52 h-52 rounded-full flex flex-row items-center justify-center")}
       >
         <motion.button
