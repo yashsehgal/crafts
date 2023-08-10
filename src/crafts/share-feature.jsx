@@ -1,29 +1,38 @@
 import { FaCamera, FaMusic, FaRegClock, FaRegPaperPlane } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { cn } from '../scripts/cn';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ShareFeature() {
   const [shareActionToggle, setShareActionToggle] = useState(false);
-  const [featureInteractionToggle, setFeatureInteractionToggle] = useState(false);
+  const [isHolded, setIsHolded] = useState(false);
+
+  useEffect(() => {
+    if (!isHolded) {
+      window.addEventListener('mouseup', (e) => {
+        setShareActionToggle(false);
+      })
+    }
+  }, [window]);
+
   return (
     <div className="share-feature-component-container">
       <div className={cn("share-feature-component relative w-52 h-52 rounded-full flex flex-row items-center justify-center")}
-        onMouseEnter={() => setFeatureInteractionToggle(true)}
-        onMouseLeave={() => setFeatureInteractionToggle(false)}
       >
         <motion.button
           className={cn("text-3xl w-fit p-4 bg-white shadow-md rounded-2xl cursor-pointer select-none transition-all text-gray-800 hover:scale-125 z-10")}
-          onMouseEnter={() => {
-            setShareActionToggle(true); 
-            setFeatureInteractionToggle(true);
+          onMouseDown={() => {
+            setShareActionToggle(true);
+            setIsHolded(true);
           }}
-          onMouseLeave={() => setShareActionToggle(false)}
+          onMouseUp={() => {
+            setShareActionToggle(false);
+          }}
         >
           <FaRegPaperPlane />
         </motion.button>
         {
-          ((shareActionToggle || featureInteractionToggle)) &&
+          ((shareActionToggle)) &&
           <div className={cn("sub-options-container",
         )}>
           {/* Action for reminder */}

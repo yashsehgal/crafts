@@ -1,3 +1,5 @@
+import ShareFeature from "./share-feature";
+
 export default function CTASection() {
   return (
     <main class="cta-section relative m-24 mt-56">
