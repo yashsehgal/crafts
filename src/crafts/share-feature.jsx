@@ -28,6 +28,13 @@ export default function ShareFeature() {
           onMouseUp={() => {
             setShareActionToggle(false);
           }}
+          onPointerDown={() => {
+            setShareActionToggle(true);
+            setIsHolded(true);
+          }}
+          onPointerUp={() => {
+            setShareActionToggle(false);
+          }}
         >
           <FaRegPaperPlane />
         </motion.button>
