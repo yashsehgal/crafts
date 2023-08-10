@@ -21,7 +21,7 @@ import Widgets from "./crafts/widgets";
 
 export default function App() {
   return (
-    <main className="main-container flex h-[100vh] w-[100vw] flex-row items-center justify-center bg-slate-50">
+    <main className="main-container flex h-screen w-screen flex-row items-center justify-center bg-slate-50">
       {<ShareFeature /> || <span className="text-slate-400 select-none cursor-default font-medium">{"What are you buidling today, sweetheart? ✨"}</span>}
     </main>
   )
