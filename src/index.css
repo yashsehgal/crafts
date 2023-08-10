@@ -46,6 +46,8 @@
 /* removing scroll-bar visibility in spotify lyrics controller */
 ::-webkit-scrollbar {
   display: none;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
 }
 
 * {

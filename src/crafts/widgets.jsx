@@ -1,4 +1,4 @@
-import { FaCloud } from "react-icons/fa";
+import { FaCloud, FaPlus } from "react-icons/fa";
 import { cn } from "../scripts/cn";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -17,6 +17,7 @@ export default function Widgets() {
       >
         <TemperatureWidget hoverAnimate={widgetContainerHover} />
         <PhotoCoverWidget hoverAnimate={widgetContainerHover} />
+        <EmptyWidget hoverAnimate={widgetContainerHover} />
       </div>
     </div>
   );
@@ -70,4 +71,19 @@ function PhotoCoverWidget({ hoverAnimate = false }) {
       </div>
     </motion.div>
   );
+}
+
+function EmptyWidget({ hoverAnimate=false }) {
+  return (
+    <motion.button
+      className={cn(
+        "relative bg-white flex flex-col items-center justify-center shadow-2xl transition-all overflow-hidden temperature-lookup-widget w-56 h-56 rounded-[40px] select-none active:scale-75 active:after:scale-90 active:bg-gray-100",
+        hoverAnimate && "scale-90"
+      )}
+    >
+      <span className="flex flex-row items-center justify-center gap-2 text-gray-500 mt-2 font-medium tracking-tight">
+        <FaPlus className="text-gray-500" />{"add widgets"}
+      </span>
+    </motion.button>
+  )
 }
