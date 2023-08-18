@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-slider": "^1.1.2",
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.3.1",
     "imagekitio-react": "^2.0.0",
     "querystring-es3": "^0.2.1",
     "react": "^18.1.0",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "@radix-ui/react-tooltip": "^1.0.5",
+    "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.12",
     "react-icons": "^4.3.1",

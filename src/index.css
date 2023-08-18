@@ -86,3 +86,11 @@
 .github-comment-content-body-wrapper a {
   @apply text-blue-500 hover:underline;
 }
+
+.desktop-view-container {
+  @apply bg-gray-100 flex flex-row items-end justify-center;
+  background-image: url('./crafts/media/wallpaper-dessert.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
