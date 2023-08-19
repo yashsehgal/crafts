@@ -69,18 +69,18 @@ const CraftItems = [
     component: <GitHubComment />,
     title: "GitHub inspired comment textbox with MD support & image paste",
     isWIP: true,
-  },
+  }
 ];
 
 export default function App() {
   return (
-    <main className="main-container w-screen h-screen flex flex-row items-center justify-center">
+    <main className="main-container w-screen h-screen flex flex-row items-center justify-center max-lg:px-6">
       <Routes>
         <Route
           path="/"
           element={
             <div className="grid grid-cols-1 items-start gap-2 -mt-24">
-              <h1 className="tracking-tight font-bold text-8xl mb-16">
+              <h1 className="tracking-tight font-bold text-8xl mb-16 max-lg:text-6xl max-md:text-5xl">
                 crafting space of{" "}
                 <a href="https://yashsehgal.com" target={"_blank"} className="underline hover:underline-offset-[20px] hover:bg-orange-600">
                   yash
@@ -94,7 +94,7 @@ export default function App() {
                 >
                   <span className="underline">{craft.title}</span>
                   {craft.isWIP && (
-                    <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-600 text-sm font-medium">
+                    <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-600 text-sm font-medium truncate max-md:text-xs">
                       still experimenting
                     </span>
                   )}
