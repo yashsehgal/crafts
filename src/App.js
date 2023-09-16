@@ -20,12 +20,17 @@ import TabSwitch from "./crafts/tab-switch";
 import TagsContainer from "./crafts/tags-container";
 import Toggle from "./crafts/toggle";
 import Widgets from "./crafts/widgets";
+import ShareSelection from "./crafts/share-selection";
+import MathFunctions from "./crafts/math/math-functions";
+import Radius from "./crafts/radius";
+import CalendarUI from "./crafts/calendar-ui";
 
 const CraftItems = [
   {
     path: "/ios-app-dock",
     component: <ApplicationDock />,
     title: "iOS inspired application dock",
+    description: "",
     isWIP: false,
   },
   {
@@ -69,6 +74,12 @@ const CraftItems = [
     component: <GitHubComment />,
     title: "GitHub inspired comment textbox with MD support & image paste",
     isWIP: true,
+  },
+  {
+    path: "/calendar-ui",
+    component: <CalendarUI />,
+    title: "Calendar UI",
+    isWIP: true
   }
 ];
 
