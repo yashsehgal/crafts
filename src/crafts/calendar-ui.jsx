@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { cn } from "../scripts/cn";
+import { motion } from "framer-motion";
+import '@radix-ui/themes/styles.css';
+import { Popover, Theme } from "@radix-ui/themes";
 
 const WeekDays = {
   1: "mon",
@@ -28,8 +31,8 @@ const CalendarInformation = {
       timeline: {
         "11": [
           {
-            title: "Meeting with Team",
-            description: "",
+            title: "Peter is spiderman case meeting",
+            description: "Helping Peter win his case",
             attachments: [],
             time: {
               start: 11,
@@ -40,11 +43,11 @@ const CalendarInformation = {
                 name: "Yash",
                 mail: "yashsehgal.work@gmail.com",
                 isManager: true,
-                rsvpStatus: "Yes",
+                rsvpStatus: "Maybe",
               },
               {
-                name: "Tony",
-                mail: "tonystark@avengers.com",
+                name: "Matt",
+                mail: "daredevil@marvel.com",
                 isManager: true,
                 rsvpStatus: "Yes"
               },
@@ -53,12 +56,6 @@ const CalendarInformation = {
                 mail: "peterparker@avengers.com",
                 isManager: false,
                 rsvpStatus: "Yes"
-              },
-              {
-                name: "Bruce",
-                mail: "brucebanner@avengers.com",
-                isManager: false,
-                rsvpStatus: "Maybe"
               },
               {
                 name: "Nick",
@@ -76,96 +73,7 @@ const CalendarInformation = {
     {
       day: "tuesday",
       shortName: "tue",
-      timeline: {
-        "8": [
-          {
-            title: "Meeting with Team",
-            description: "",
-            attachments: [],
-            time: {
-              start: 8,
-              end: 9
-            },
-            members: [
-              {
-                name: "Yash",
-                mail: "yashsehgal.work@gmail.com",
-                isManager: true,
-                rsvpStatus: "Yes",
-              },
-              {
-                name: "Tony",
-                mail: "tonystark@avengers.com",
-                isManager: true,
-                rsvpStatus: "Yes"
-              },
-              {
-                name: "Peter",
-                mail: "peterparker@avengers.com",
-                isManager: false,
-                rsvpStatus: "Yes"
-              },
-              {
-                name: "Bruce",
-                mail: "brucebanner@avengers.com",
-                isManager: false,
-                rsvpStatus: "Maybe"
-              },
-              {
-                name: "Nick",
-                mail: "nickfury@avengers.com",
-                isManager: true,
-                rsvpStatus: "No",
-                statusMessage: "Out of Planet"
-              }
-            ]
-          }
-        ],
-        "11": [
-          {
-            title: "Meeting with Team",
-            description: "",
-            attachments: [],
-            time: {
-              start: 11,
-              end: 14
-            },
-            members: [
-              {
-                name: "Yash",
-                mail: "yashsehgal.work@gmail.com",
-                isManager: true,
-                rsvpStatus: "Yes",
-              },
-              {
-                name: "Tony",
-                mail: "tonystark@avengers.com",
-                isManager: true,
-                rsvpStatus: "Yes"
-              },
-              {
-                name: "Peter",
-                mail: "peterparker@avengers.com",
-                isManager: false,
-                rsvpStatus: "Yes"
-              },
-              {
-                name: "Bruce",
-                mail: "brucebanner@avengers.com",
-                isManager: false,
-                rsvpStatus: "Maybe"
-              },
-              {
-                name: "Nick",
-                mail: "nickfury@avengers.com",
-                isManager: true,
-                rsvpStatus: "No",
-                statusMessage: "Out of Planet"
-              }
-            ]
-          }
-        ]
-      }
+      timeline: {}
     },
     // Timeline for Wednesday
     {
@@ -427,7 +335,7 @@ const CalendarInformation = {
                 name: "Yash",
                 mail: "yashsehgal.work@gmail.com",
                 isManager: true,
-                rsvpStatus: "Yes",
+                rsvpStatus: "Maybe",
               },
               {
                 name: "Tony",
@@ -560,10 +468,12 @@ const CalendarInformation = {
 export default function CalendarUI() {
   const [calendarData, setCalendarData] = useState(CalendarInformation);
   return (
-    <div className="calendar-ui-component-container grid grid-cols-1 gap-6">
-      <CalendarUIHeader {...calendarData.authorInfo} />
-      <CalendarBox data={calendarData.data} />
-    </div>
+    <Theme>
+      <div className="calendar-ui-component-container grid grid-cols-1 gap-6">
+        <CalendarUIHeader {...calendarData.authorInfo} />
+        <CalendarBox data={calendarData.data} />
+      </div>
+    </Theme>
   )
 }
 
@@ -683,14 +593,53 @@ function CalendarSlot({ time, hasSlotBlocked = false, slotData = {} }) {
 function CalendarBlockedSlot({ blockedSlotData }) {
   console.log(blockedSlotData)
   return (
-    <div className={cn("calendar-blocked-slot w-full absolute rounded bg-white border border-neutral-200 shadow-md shadow-neutral-100 hover:shadow-lg p-1")}
-      style={{
-        height: `${3 * Math.abs(blockedSlotData[0].time.start - blockedSlotData[0].time.end)}rem`
-      }}
-    >
-      <p className={cn("text-neutral-600 text-sm font-medium")}>
-        {blockedSlotData[0].title}
-      </p>
-    </div>
+    <Popover.Root className="relative h-fit">
+      <Popover.Trigger className="">
+        <motion.button
+          className={cn("calendar-blocked-slot w-full absolute rounded bg-white border border-neutral-200 shadow-md shadow-neutral-100 hover:shadow-lg p-1 top-0 left-0 z-30")}
+          style={{
+            height: `${3 * Math.abs(blockedSlotData[0].time.start - blockedSlotData[0].time.end)}rem`
+          }}
+        >
+          <div className="w-full h-full">
+            <p className={cn("text-neutral-600 text-sm font-medium truncate text-left")}>
+              {blockedSlotData[0].title}
+            </p>
+          </div>
+        </motion.button>
+      </Popover.Trigger>
+      <Popover.Content style={{ width: 360, height: 460, position: "absolute", top: "-10rem", left: "10rem" }}>
+        <h1 className="leading-snug tracking-tighter font-medium text-xl">
+          {blockedSlotData[0].title}
+        </h1>
+        <div className="my-4">
+          <p className="text-sm select-none font-medium">{"Description"}</p>
+          <p className="text-sm text-neutral-600">
+            {blockedSlotData[0].description}
+          </p>
+        </div>
+        <div className="my-4">
+          <p className="text-sm select-none font-medium">{"Members"}</p>
+          <div className="members-list-container mt-2">
+            <ul className="members-list">
+              {blockedSlotData[0].members.map((member, memberIndex) => (
+                <li className="member-item__data py-2 flex flex-row items-start justify-between" key={memberIndex}>
+                  <div>
+                    <p className="leading-tight">{member.name}</p>
+                    <p className="text-sm text-neutral-500 hover:underline cursor-pointer">{member.mail}</p>
+                    {member.statusMessage && <p className="text-xs">{"Status: " + member.statusMessage}</p>}
+                  </div>
+                  <div className={cn("member-meeting-rsvp-status-wrapper text-xs font-normal text-white px-2 py-1 rounded-full w-fit h-fit",
+                    (member.rsvpStatus === "Yes" ? "bg-green-600" : (member.rsvpStatus === "Maybe" ? "bg-yellow-600" : "bg-red-500"))
+                  )}>
+                    {member.rsvpStatus}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Popover.Content>
+    </Popover.Root>
   )
 }
