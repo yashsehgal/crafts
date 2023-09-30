@@ -25,6 +25,7 @@ import MathFunctions from "./crafts/math/math-functions";
 import Radius from "./crafts/radius";
 import CalendarUI from "./crafts/calendar-ui";
 import OTPVerification from "./crafts/otp-verify";
+import AnimatedHeroSection from "./crafts/animated-hero";
 
 const CraftItems = [
   {
@@ -86,6 +87,12 @@ const CraftItems = [
     path: "/otp-verify",
     component: <OTPVerification />,
     title: "OTP Verification",
+    isWIP: false
+  },
+  {
+    path: "/animated-hero",
+    component: <AnimatedHeroSection />,
+    title: "Animated Hero Section",
     isWIP: true
   }
 ];
