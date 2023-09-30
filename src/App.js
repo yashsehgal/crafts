@@ -24,6 +24,7 @@ import ShareSelection from "./crafts/share-selection";
 import MathFunctions from "./crafts/math/math-functions";
 import Radius from "./crafts/radius";
 import CalendarUI from "./crafts/calendar-ui";
+import OTPVerification from "./crafts/otp-verify";
 
 const CraftItems = [
   {
@@ -79,6 +80,12 @@ const CraftItems = [
     path: "/calendar-ui",
     component: <CalendarUI />,
     title: "Calendar UI",
+    isWIP: true
+  },
+  {
+    path: "/otp-verify",
+    component: <OTPVerification />,
+    title: "OTP Verification",
     isWIP: true
   }
 ];
