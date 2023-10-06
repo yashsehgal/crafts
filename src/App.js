@@ -26,6 +26,7 @@ import Radius from "./crafts/radius";
 import CalendarUI from "./crafts/calendar-ui";
 import OTPVerification from "./crafts/otp-verify";
 import AnimatedHeroSection from "./crafts/animated-hero";
+import Painting from "./crafts/painting";
 
 const CraftItems = [
   {
@@ -94,6 +95,12 @@ const CraftItems = [
     component: <AnimatedHeroSection />,
     title: "Animated Hero Section",
     isWIP: true
+  },
+  {
+    path: "/painting",
+    component: <Painting />,
+    title: "Painting using JS",
+    isWIP: false
   }
 ];
 

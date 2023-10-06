@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .SliderRoot {
   position: relative;
   display: flex;
