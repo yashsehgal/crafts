@@ -27,6 +27,7 @@ import CalendarUI from "./crafts/calendar-ui";
 import OTPVerification from "./crafts/otp-verify";
 import AnimatedHeroSection from "./crafts/animated-hero";
 import Painting from "./crafts/painting";
+import AuthFlow from "./crafts/auth-flow";
 
 const CraftItems = [
   {
@@ -91,16 +92,14 @@ const CraftItems = [
     isWIP: false
   },
   {
-    path: "/animated-hero",
-    component: <AnimatedHeroSection />,
-    title: "Animated Hero Section",
-    isWIP: true
-  },
-  {
     path: "/painting",
     component: <Painting />,
     title: "Painting using JS",
-    isWIP: false
+  },
+  {
+    path: "/auth-flow",
+    component: <AuthFlow />,
+    title: "Magical Authentication Flow",
   }
 ];
 
