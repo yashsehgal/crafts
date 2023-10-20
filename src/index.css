@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body {
+  @apply bg-neutral-100;
+}
+
 .SliderRoot {
   position: relative;
   display: flex;
@@ -95,3 +99,39 @@
   background-position: center;
   background-size: cover;
 }
+
+
+/* styles for card animations grid */
+.card-animation {
+  animation: 0.6s cardRenderAnimation ease-in-out;
+  @apply hover:shadow-xl hover:shadow-neutral-200/40 focus:scale-95 truncate;
+}
+
+@keyframes cardRenderAnimation {
+  0% {
+    opacity: 0;
+    scale: 108%;
+    @apply drop-shadow-xl shadow-neutral-200/50;
+  }
+  25% {
+    opacity: 0.25;
+    scale: 106%;
+    @apply drop-shadow-lg shadow-neutral-200/50;
+  }
+  50% {
+    opacity: 0.50;
+    scale: 104%;
+    @apply drop-shadow-md shadow-neutral-200/50;
+  }
+  75% {
+    opacity: 0.75;
+    scale: 102%;
+    @apply drop-shadow shadow-neutral-200/50;
+  }
+  100% {
+    opacity: 1;
+    scale: 100%;
+    @apply drop-shadow-sm shadow-neutral-200/50;
+  }
+}
+

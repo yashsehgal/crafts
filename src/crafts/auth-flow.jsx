@@ -3,13 +3,18 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "../scripts/cn";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 
+const validateEmail = (email) => {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+};
+
 export default function AuthFlow() {
   const [view, setView] = useState("email");  // mail or password
   const [mailInput, setMailInput] = useState("");
 
   return (
     <div className="auth-flow-component-container">
-      <div className="auth-flow-view-card w-[420px] border border-neutral-100 shadow-xl shadow-neutral-100 p-4 rounded-xl grid grid-cols-1 gap-3">
+      <div className="auth-flow-view-card w-[420px] border border-neutral-100 shadow-xl shadow-neutral-100 py-3 px-5 rounded-xl grid grid-cols-1 gap-3">
         <div className="mb-3">
           <h1 className="leading-snug text-neutral-800 font-bold text-5xl tracking-tight">
             {"Sign in"}
@@ -18,7 +23,7 @@ export default function AuthFlow() {
             Don&apos;t have an account? <a href="#" className="text-blue-500">Create account</a></p>
         </div>
         {view === "email" && <EmailView mailInput={mailInput} setMailInput={setMailInput} setView={setView} />}
-        {view === "password" && <PasswordView />}
+        {view === "password" && <PasswordView setView={setView} />}
         <div className={cn(view === "password" && "grid grid-cols-2 gap-3")}>
           {view === "password" && <button
             className={cn("flex flex-row items-center justify-center gap-3 border border-neutral-200 bg-white text-neutral-800 font-medium text-lg px-6 py-3 rounded-lg w-full hover:shadow-sm hover:transition-all hover:scale-95 active:scale-90 active:transition-all hover:bg-neutral-100")}
@@ -102,10 +107,8 @@ function EmailView({ mailInput, setMailInput, setView }) {
           value={mailInput}
           onChange={(e) => setMailInput(e.target.value)}
           onKeyPress={(e) => {
-            if (mailInput) {
-              if (e.key === "Enter") {
-                setView("password");
-              }
+            if (mailInput && e.key === "Enter" && validateEmail(mailInput)) {
+              setView("password");
             }
           }}
         />
@@ -114,7 +117,11 @@ function EmailView({ mailInput, setMailInput, setView }) {
   )
 }
 
-function PasswordView() {
+function PasswordView({ setView }) {
+  // auto-focus to password input
+  useEffect(() => {
+    document.getElementById('password-input').focus();
+  }, []);
   return (
     <motion.div
       initial={{
@@ -127,15 +134,19 @@ function PasswordView() {
         type: "spring",
         bounce: 0.6
       }}
-      exit={{
-        x: 5
-      }}
     >
       <AnimatePresence>
       <input
         type="password"
         placeholder="Enter your password"
         className="text-lg border border-neutral-300 bg-neutral-50 font-medium px-6 py-3 rounded-lg w-full focus:bg-white focus:shadow-md"
+        id="password-input"
+          onKeyPress={(e) => {
+            if (e.shiftKey && e.metaKey) {
+              console.log("trigerring");
+              setView("email");
+            }
+        }}
       />
     </AnimatePresence>
     </motion.div>

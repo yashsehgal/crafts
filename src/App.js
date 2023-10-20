@@ -28,6 +28,9 @@ import OTPVerification from "./crafts/otp-verify";
 import AnimatedHeroSection from "./crafts/animated-hero";
 import Painting from "./crafts/painting";
 import AuthFlow from "./crafts/auth-flow";
+import ShareableList from "./crafts/shareable-list";
+import CardAnimationGrid from "./crafts/card-animation";
+import Deck from "./crafts/deck";
 
 const CraftItems = [
   {
@@ -100,6 +103,24 @@ const CraftItems = [
     path: "/auth-flow",
     component: <AuthFlow />,
     title: "Magical Authentication Flow",
+  },
+  {
+    path: "/shareable-list",
+    component: <ShareableList />,
+    title: "Shareable content across lists",
+    isWIP: true
+  },
+  {
+    path: "/card-animations-grid",
+    component: <CardAnimationGrid />,
+    title: "Animated cards grid",
+    isWIP: true
+  },
+  {
+    path: "/deck",
+    component: <Deck />,
+    title: "Cards animation in deck",
+    isWIP: true,
   }
 ];
 
@@ -117,6 +138,7 @@ export default function App() {
                   yash
                 </a>
               </h1>
+              <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1 max-h-[500px] overflow-y-scroll">
               {CraftItems.map((craft, craftIndex) => (
                 <Link
                   to={craft.path}
@@ -131,6 +153,7 @@ export default function App() {
                   )}
                 </Link>
               ))}
+              </div>
             </div>
           }
         />
