@@ -31,6 +31,8 @@ import AuthFlow from "./crafts/auth-flow";
 import ShareableList from "./crafts/shareable-list";
 import CardAnimationGrid from "./crafts/card-animation";
 import Deck from "./crafts/deck";
+import GlassComponents from "./crafts/glass-components";
+import NotionLikeComponent from "./crafts/notion-like-component";
 
 const CraftItems = [
   {
@@ -121,6 +123,16 @@ const CraftItems = [
     component: <Deck />,
     title: "Cards animation in deck",
     isWIP: true,
+  },
+  {
+    path: "/glass-components",
+    component: <GlassComponents />,
+    title: "Glass components"
+  },
+  {
+    path: "/notion-like",
+    component: <NotionLikeComponent />,
+    title: "Notion-like component"
   }
 ];
 
