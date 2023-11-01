@@ -33,6 +33,8 @@ import CardAnimationGrid from "./crafts/card-animation";
 import Deck from "./crafts/deck";
 import GlassComponents from "./crafts/glass-components";
 import NotionLikeComponent from "./crafts/notion-like-component";
+import OnboardingFlow from "./crafts/onboarding-flow";
+import GradientCircle from "./crafts/gradient-circle";
 
 const CraftItems = [
   {
@@ -133,6 +135,11 @@ const CraftItems = [
     path: "/notion-like",
     component: <NotionLikeComponent />,
     title: "Notion-like component"
+  },
+  {
+    path: "/onboarding-flow",
+    component: <OnboardingFlow />,
+    title: "Onboarding flow"
   }
 ];
 
